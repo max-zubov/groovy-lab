@@ -11,7 +11,7 @@ class Calc {
         if(args.length>0) 
             exprStr = args[0]
         else
-            exprStr = " 7 / ( (2*.5 + (5.1-3.1 )/3 ) ) = +7"
+            exprStr = " 20 / ( (2*.5 + (5.1-3.1 )**(6?:15/0?:3) ) ) = +7"
 
             println "Input string: " + exprStr
             println "Result: " + clc.resolve(exprStr)
