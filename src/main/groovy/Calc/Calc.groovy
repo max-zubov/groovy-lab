@@ -42,6 +42,7 @@ class express {
     calcItem[] stackList = []
     calcItem[] item = [new valueItem(), \
                       new stepItem(),  \
+                      new elvisItem(),  \
                       new plusItem(), new minusItem(), \
                       new multyItem(), new divideItem(),  \
                       new equalItem(),  \
@@ -211,6 +212,15 @@ class stepItem extends operatorItem {
 
     def calculate(express expr){
         calculate(expr, {i,j -> return(i**j)})
+    }
+}
+
+
+class elvisItem extends operatorItem {
+    elvisItem() {lexemma="?:"; prioritet=40}
+
+    def calculate(express expr){
+        calculate(expr, {i,j -> if(i==0) i=j; return i;})
     }
 }
 
